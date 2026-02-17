@@ -520,186 +520,139 @@
 </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const panels = {
-                'sciencePanel': document.getElementById('sciencePanel')
-            };
+    document.addEventListener('DOMContentLoaded', function() {
+    const panels = {
+        'sciencePanel': document.getElementById('sciencePanel'),
+      
+    };
+    
+    const overlay = document.getElementById('panelOverlay');
+    const navItems = document.querySelectorAll('.nav-item[class*="nav-"], .modal-nav-item[class*="nav-"]');
+    const navButtons = document.querySelectorAll('.nav-btn[class*="nav-"], .modal-nav-btn[class*="nav-"]');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+    
+    let activePanel = null;
+    let isTransitioning = false;
+
+    function openPanel(panelId) {
+        if (isTransitioning) return;
+        if (!panels[panelId]) {
+            console.warn(`Панель ${panelId} не найдена`);
+            return;
+        }
+        
+        isTransitioning = true;
+        
+        overlay.classList.add('active');
+        document.body.classList.add('panel-open');
+        document.body.style.overflow = 'hidden';
+        
+        if (activePanel && activePanel !== panelId) {
+            panels[activePanel].classList.remove('active');
+        }
+        
+        activePanel = panelId;
+        
+        setTimeout(() => {
+            panels[panelId].classList.add('active');
+            updateNavigation(panelId);
             
-            const overlay = document.getElementById('panelOverlay');
-            const navItems = document.querySelectorAll('.nav-item[class*="nav-"], .modal-nav-item[class*="nav-"]');
-            const navButtons = document.querySelectorAll('.nav-btn[class*="nav-"], .modal-nav-btn[class*="nav-"]');
-            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        }, 50);
+    }
+
+    function closeAllPanels() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        Object.values(panels).forEach(panel => {
+            panel.classList.remove('active');
+        });
+        
+        setTimeout(() => {
+            overlay.classList.remove('active');
+            document.body.classList.remove('panel-open');
+            document.body.style.overflow = '';
             
-            let activePanel = null;
-            let isTransitioning = false;
-
-            function openPanel(panelId) {
-                if (isTransitioning) return;
-                if (!panels[panelId]) return;
-                
-                isTransitioning = true;
-                
-                overlay.classList.add('active');
-                document.body.classList.add('panel-open');
-                document.body.style.overflow = 'hidden';
-                
-                if (activePanel && activePanel !== panelId) {
-                    panels[activePanel].classList.remove('active');
-                }
-                
-                activePanel = panelId;
-                
-                setTimeout(() => {
-                    panels[panelId].classList.add('active');
-                    updateNavigation(panelId);
-                    
-                    setTimeout(() => {
-                        isTransitioning = false;
-                    }, 300);
-                }, 50);
-            }
-
-            function closeAllPanels() {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                Object.values(panels).forEach(panel => {
-                    panel.classList.remove('active');
-                });
-                
-                setTimeout(() => {
-                    overlay.classList.remove('active');
-                    document.body.classList.remove('panel-open');
-                    document.body.style.overflow = '';
-                    
-                    resetNavigation();
-                    activePanel = null;
-                    
-                    setTimeout(() => {
-                        isTransitioning = false;
-                    }, 300);
-                }, 300);
-            }
-
-            function updateNavigation(panelId) {
-                navItems.forEach(item => item.classList.remove('active'));
-                navButtons.forEach(btn => btn.classList.remove('active'));
-                
-                const panelType = panelId.replace('Panel', '');
-                const activeElements = document.querySelectorAll(`.nav-${panelType}, .nav-${panelType}-btn`);
-                
-                activeElements.forEach(el => {
-                    if (el.classList.contains('modal-nav-item') || 
-                        el.classList.contains('nav-item') || 
-                        el.classList.contains('nav-btn') || 
-                        el.classList.contains('modal-nav-btn')) {
-                        el.classList.add('active');
-                    }
-                });
-            }
-
-            function resetNavigation() {
-                navItems.forEach(item => item.classList.remove('active'));
-                navButtons.forEach(btn => btn.classList.remove('active'));
-            }
-
-            document.querySelectorAll('.nav-science-btn, .modal-nav-btn.btn-nauka').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    if (activePanel === 'sciencePanel') {
-                        closeAllPanels();
-                    } else {
-                        openPanel('sciencePanel');
-                    }
-                });
-            });
-
-            const burgerMenu = document.querySelector('.burger-menu');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileOverlay = document.querySelector('.mobile-overlay');
+            resetNavigation();
+            activePanel = null;
             
-            if (burgerMenu) {
-                burgerMenu.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    mobileMenu.classList.toggle('active');
-                    mobileOverlay.classList.toggle('active');
-                    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-                });
-            }
-            
-            if (mobileOverlay) {
-                mobileOverlay.addEventListener('click', function() {
-                    burgerMenu.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                    this.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            }
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        }, 300);
+    }
 
-            mobileNavItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const panelClass = Array.from(this.classList)
-                        .find(cls => cls.startsWith('nav-') && cls.endsWith('-btn'));
-                    
-                    if (!panelClass) return;
-                    
-                    const panelType = panelClass.replace('nav-', '').replace('-btn', '');
-                    const panelId = panelType + 'Panel';
-                    
-                    if (panels[panelId]) {
-                        burgerMenu.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                        mobileOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                        
-                        openPanel(panelId);
-                    }
-                });
-            });
-
-            overlay.addEventListener('click', function(e) {
-                if (!isTransitioning) closeAllPanels();
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && activePanel) {
-                    closeAllPanels();
-                }
-            });
-
-            Object.values(panels).forEach(panel => {
-                panel.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            });
-
-            document.querySelectorAll('.panel-item-content').forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.classList.add('active');
-                    const line = this.nextElementSibling;
-                    if (line && line.classList.contains('panel-item-line')) {
-                        line.classList.add('active');
-                    }
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.classList.remove('active');
-                    const line = this.nextElementSibling;
-                    if (line && line.classList.contains('panel-item-line')) {
-                        line.classList.remove('active');
-                    }
-                });
-            });
-
-            const logo = document.querySelector('.logo');
-            if (logo) {
-                logo.addEventListener('click', function() {
-                    window.location.href = 'index.html';
-                });
+    function updateNavigation(panelId) {
+        navItems.forEach(item => item.classList.remove('active'));
+        navButtons.forEach(btn => btn.classList.remove('active'));
+        
+        const panelType = panelId.replace('Panel', '');
+        const activeElements = document.querySelectorAll(`.nav-${panelType}-btn, .nav-${panelType}`);
+        
+        activeElements.forEach(el => {
+            if (el.classList.contains('modal-nav-item') || 
+                el.classList.contains('nav-item') || 
+                el.classList.contains('nav-btn') || 
+                el.classList.contains('modal-nav-btn')) {
+                el.classList.add('active');
             }
         });
+    }
+
+    function resetNavigation() {
+        navItems.forEach(item => item.classList.remove('active'));
+        navButtons.forEach(btn => btn.classList.remove('active'));
+    }
+    document.querySelectorAll('.nav-science-btn, .modal-nav-btn.btn-nauka').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (activePanel === 'sciencePanel') {
+                closeAllPanels();
+            } else {
+                openPanel('sciencePanel');
+            }
+        });
+    });
+
+    document.querySelectorAll('.nav-procurement-btn, .modal-nav-btn.btn-zakup').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (panels['procurementPanel']) {
+                if (activePanel === 'procurementPanel') {
+                    closeAllPanels();
+                } else {
+                    openPanel('procurementPanel');
+                }
+            } else {
+                console.log('Панель для Госзакуп не реализована');
+            }
+        });
+    });
+
+    document.querySelectorAll('.nav-contacts-btn, .modal-nav-btn.btn-kontakt').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (panels['contactsPanel']) {
+                if (activePanel === 'contactsPanel') {
+                    closeAllPanels();
+                } else {
+                    openPanel('contactsPanel');
+                }
+            } else {
+            }
+        });
+    });
+
+});
     </script>
 </body>
 </html>

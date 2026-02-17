@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Территория знаний и открытий</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prata:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Prata', serif;
+            line-height: 1.6;
+            background: white;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: auto; 
+            overflow: hidden;
+            padding-top: 0;
+            margin-top: 0;
+            padding-bottom: 40px; 
+            background: linear-gradient(to right,rgba(208, 218, 197, 0.2), rgba(62, 68, 106, 0.2));
+        }
+
+        .hero-bg {
+            display: none;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 100;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-nav {
+            display: flex;
+            align-items: flex-start;
+            padding-top: 50px;
+            position: relative;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        .section-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        .logo {
+            width: 300px;
+            height: 85px;
+            background: url('/img/Group 1000002552-2.svg') center/contain no-repeat;
+            flex-shrink: 0;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .nav-right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .nav-top-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .nav-top-line::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgb(0, 0, 0);
+            z-index: 1;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            flex: 1;
+            padding-bottom: 5px;
+        }
+
+        .nav-item {
+            font-weight: 500;
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            white-space: nowrap;
+            padding: 8px 0;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-item:hover {
+            color: #4848f1;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            padding-bottom: 10px;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 42px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .nav-btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn-nauka { 
+            background-image: url('/img/Group 1000002553.svg');
+        }
+
+        .btn-zakup { 
+            background-image: url('/img/Group 1000002555-2.svg');
+        }
+
+        .btn-kontakt { 
+            background-image: url('/img/Group 1000002556-2.svg');
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            position: absolute;
+            right: 0;
+            top: 25px;
+        }
+
+        .burger-line {
+            width: 25px;
+            height: 2px;
+            background: rgb(0, 0, 0);
+            transition: 0.3s;
+        }
+
+        .burger-menu.active .burger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .burger-menu.active .burger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active .burger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .hero-text {
+            margin-top: 20px;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            line-height: 1.1;
+            color: rgb(0, 0, 0);
+            font-weight: 500;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .title-line {
+            width: 100%;
+            height: 1px;
+            background: #000;
+            margin-bottom: 40px;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: rgb(0, 0, 0);
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .hero-news-block {
+            display: flex;
+            gap: 60px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .hero-news-left {
+            flex: 0 0 500px; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-news-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-news-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-social-icons {
+            display: flex;
+        }
+
+        .hero-social-icon {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            transition: opacity 0.3s;
+        }
+
+        .hero-social-icon:hover {
+            opacity: 0.8;
+        }
+
+        .hero-social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero-news-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            padding-top: 10px;
+        }
+
+        .hero-news-date {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px; 
+            color: #666;
+        }
+
+        .hero-news-title {
+            font-family: 'Prata', serif;
+            font-size: 22px; 
+            line-height: 1.4;
+            color: #000;
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        .hero-news-button {
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px; 
+            font-weight: 500;
+            color: #000;
+            background: none;
+            border: 1px solid #000;
+            padding: 10px 35px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            width: fit-content;
+            margin-top: 5px;
+        }
+
+        .hero-news-button:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: #1c2745;
+            z-index: 1000;
+            padding: 100px 30px 30px;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-nav-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-nav-item {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            font-family: 'Prata', serif;
+        }
+
+        .side-panel-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .side-panel-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .side-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
+            background: #0a0a0a;
+            z-index: 1000;
+            overflow-y: auto;
+            transform: translateX(100%);
+            border: none;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .side-panel.active {
+            transform: translateX(0);
+        }
+
+        .panel-content {
+            padding: 20px 80px 60px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-navigation {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: auto;
+            background: transparent;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 80px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-nav-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .modal-nav-item {
+            font-weight: 500;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            white-space: nowrap;
+            padding: 5px 0;
+            font-family: 'Prata', serif;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .modal-nav-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .modal-nav-btn {
+            width: 35px;
+            height: 37px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .modal-nav-btn.btn-nauka { 
+            background-image: url('/img/Group 1000002553.png');
+        }
+
+        .modal-nav-btn.btn-zakup { 
+            background-image: url('/img/Group 1000002555.png');
+        }
+
+        .modal-nav-btn.btn-kontakt { 
+            background-image: url('/img/Group 1000002556.png');
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .modal-nav-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .panel-grid-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .panel-grid {
+            display: flex;
+            gap: 50px;
+            width: 100%;
+            height: auto;
+        }
+
+        .panel-left {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .panel-right {
+            flex: 0 0 35%;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .panel-section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .panel-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .panel-section:last-child::after {
+            display: none;
+        }
+
+        .panel-subtitle-small {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-family: "Times New Roman", serif;
+        }
+
+        .panel-item {
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .panel-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .panel-item-content {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .panel-item-number {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            min-width: 40px;
+            font-family: 'Prata', serif;
+            transition: all 0.3s ease;
+        }
+
+        .panel-item-text {
+            flex: 1;
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-family: "Times New Roman", serif;
+            padding-right: 40px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .panel-item-arrow-top {
+            font-size: 1.6rem;
+            color: #cccccc;
+            position: absolute;
+            right: 0;
+            top: 15px;
+            font-family: 'Prata', serif;
+            transition: all 0.3s ease;
+            transform: translateX(0);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .panel-item-line {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 15px 0;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-item-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .panel-item-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #0B99FF;
+            transition: left 0.3s ease;
+        }
+
+        .panel-item-content:hover .panel-item-number,
+        .panel-item-content:hover .panel-item-text {
+            color: #0B99FF !important;
+        }
+
+        .panel-item-content:hover .panel-item-arrow-top {
+            color: #0B99FF !important;
+            transform: translateX(5px);
+        }
+
+        .panel-item:hover .panel-item-line::after {
+            left: 0;
+            background: #0B99FF !important;
+        }
+
+        #kazakhstanPanel .panel-image {
+            max-width: 290px !important;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        #kazakhstanPanel .panel-right {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        #sciencePanel .panel-grid-container {
+            align-items: flex-start !important;
+            padding-top: 40px !important;
+            margin-top: 20px;
+        }
+
+        #sciencePanel .panel-content {
+            padding-top: 50px !important;
+        }
+
+        #institutePanel .panel-content {
+            padding: 90px 80px 40px !important;
+        }
+
+        #institutePanel .panel-grid-container {
+            align-items: flex-start !important;
+            padding-top: 0 !important;
+        }
+
+        #institutePanel .panel-left > div {
+            margin-top: 30px;
+        }
+
+        .procurement-main-content,
+        .news-main-content,
+        .npa-main-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .procurement-text-block,
+        .news-text-block,
+        .npa-text-block {
+            flex: 1;
+        }
+
+        .procurement-main-title,
+        .news-main-title,
+        .npa-main-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 30px;
+            font-family: "Times New Roman", serif;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        .procurement-numbers,
+        .news-numbers,
+        .npa-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .procurement-image-block,
+        .news-image-block,
+        .npa-image-block {
+            flex: 0 0 auto;
+        }
+
+        .procurement-main-image,
+        .news-main-image,
+        .npa-main-image {
+            max-width: 320px !important;
+            height: auto;
+        }
+
+        .news-image-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .news-caption {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 320px;
+            font-family: "Times New Roman", serif;
+        }
+
+        .news-date {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .news-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        .footer {
+            background-color: #212121;
+            color: #fff;
+            padding: 0;
+            position: relative;
+        }
+
+        .footer-content {
+            padding: 40px 60px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 80px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-section {
+            flex: 0 0 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+            padding-top: 0;
+        }
+
+        .footer-logo-container {
+            width: 180px;
+            height: auto;
+        }
+
+        .footer-logo-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .footer-icons-horizontal {
+            display: flex;
+            gap: 15px;
+            flex-wrap: nowrap;
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        .footer-icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            transition: opacity 0.3s;
+            flex-shrink: 0;
+        }
+
+        .footer-icon:hover {
+            opacity: 0.8;
+        }
+
+        .footer-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-columns-wrapper {
+            flex: 1;
+            position: relative;
+            padding-top: 1px;
+            min-width: 300px;
+        }
+
+        .columns-top-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #fff;
+            z-index: 10;
+        }
+
+        .footer-columns {
+            padding-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .footer-column {
+            padding: 0 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-vertical-item {
+            margin-bottom: 35px;
+        }
+
+        .footer-vertical-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .column-title {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            margin-top: 40px;
+        }
+
+        .column-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .column-links li {
+            margin-bottom: 8px;
+        }
+
+        .column-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 1.4;
+            transition: color 0.3s;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .column-links a:hover {
+            color: #fff;
+        }
+
+        .footer-column.contacts-column {
+            padding-top: 0;
+        }
+
+        .spaced-contacts .column-title {
+            margin-bottom: 20px;
+        }
+
+        .spaced-contacts .contact-item {
+            color: #b0b0b0;
+            font-size: 11px;
+            line-height: 1.4;
+            font-family: 'Prata', serif;
+            margin-bottom: 6px;
+        }
+
+        .spaced-contacts .address {
+            margin-bottom: 15px;
+        }
+
+        .spaced-contacts .phone:last-of-type {
+            margin-bottom: 18px;
+        }
+
+        .spaced-contacts .email:last-of-type {
+            margin-bottom: 18px;
+        }
+
+        .spaced-contacts strong {
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .footer-bottom {
+            background-color: #212121;
+            padding: 20px 0;
+            padding-bottom: 20px;
+        }
+
+        .footer-bottom .container-12col {
+            max-width: 1200px;
+            padding-left: 60px;
+            padding-right: 60px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 11px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer-terms a {
+            color: #666;
+            text-decoration: none;
+            font-size: 11px;
+            transition: color 0.3s;
+            white-space: nowrap;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer-terms a:hover {
+            color: #999;
+        }
+
+        .developer-text {
+            color: #666;
+            font-size: 11px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .col-lg-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-end {
+            text-align: right;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Медиа-запросы для адаптивности */
+        @media (max-width: 1199px) {
+            .section-container {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            
+            .side-panel {
+                width: 85%;
+            }
+            
+            .panel-content {
+                padding: 20px 50px 40px;
+            }
+            
+            #institutePanel .panel-content {
+                padding: 80px 50px 40px !important;
+            }
+            
+            .modal-navigation {
+                padding: 0 50px;
+                height: 70px;
+            }
+            
+            #kazakhstanPanel .panel-image {
+                max-width: 180px !important;
+            }
+            
+            .footer-content {
+                padding: 40px 50px 30px;
+                gap: 60px;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            
+            .hero-news-left {
+                flex: 0 0 450px;
+            }
+            
+            .hero-news-title {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .section-container {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            
+            .nav-items {
+                display: none;
+            }
+            
+            .burger-menu {
+                display: flex;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                margin-top: 15px;
+            }
+            
+            .logo {
+                width: 250px;
+                height: 70px;
+            }
+            
+            .hero-news-block {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .hero-news-left {
+                flex: 0 0 auto;
+                max-width: 100%;
+            }
+            
+            .hero-news-image img {
+                max-width: 100%;
+            }
+            
+            .side-panel {
+                width: 85%;
+            }
+            
+            .footer-content {
+                padding: 40px 40px 30px;
+                gap: 50px;
+            }
+            
+            .footer-logo-section {
+                flex: 0 0 180px;
+            }
+            
+            .footer-columns {
+                padding-top: 40px;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section-container {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            
+            .hero-section {
+                min-height: auto;
+                padding-bottom: 40px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+                margin-top: 10px;
+            }
+            
+            .logo {
+                width: 220px;
+                height: 65px;
+            }
+            
+            .nav-buttons {
+                right: 40px;
+                top: 15px;
+                gap: 5px;
+            }
+            
+            .nav-btn {
+                width: 35px;
+                height: 37px;
+            }
+            
+            .burger-menu {
+                right: 0;
+                top: 20px;
+            }
+            
+            .hero-news-left {
+                flex: 0 0 auto;
+            }
+            
+            .hero-news-title {
+                font-size: 20px;
+            }
+            
+            .hero-news-button {
+                padding: 10px 30px;
+                font-size: 13px;
+            }
+            
+            .hero-social-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .side-panel {
+                width: 90%;
+            }
+            
+            .panel-content {
+                padding: 20px 35px 30px;
+            }
+            
+            #institutePanel .panel-content {
+                padding: 70px 35px 30px !important;
+            }
+            
+            .modal-navigation {
+                padding: 0 35px;
+                height: 60px;
+            }
+            
+            .modal-nav-items {
+                gap: 15px;
+            }
+            
+            .modal-nav-item {
+                font-size: 13px;
+            }
+            
+            .modal-nav-buttons {
+                margin-left: 15px;
+            }
+            
+            .footer-content {
+                padding: 30px 30px 25px;
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .footer-logo-section {
+                flex: 0 0 auto;
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-logo-container {
+                width: 160px;
+            }
+            
+            .footer-icons-horizontal {
+                justify-content: center;
+            }
+            
+            .footer-columns-wrapper {
+                min-width: 100%;
+            }
+            
+            .footer-columns {
+                padding-top: 30px;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            
+            .footer-bottom .row > div {
+                text-align: center !important;
+                margin-bottom: 15px;
+            }
+            
+            .footer-bottom .text-end {
+                text-align: center !important;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .section-container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .hero-section {
+                min-height: auto;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+                margin-top: 8px;
+            }
+            
+            .logo {
+                width: 180px;
+                height: 55px;
+            }
+            
+            .nav-buttons {
+                right: 30px;
+                top: 15px;
+            }
+            
+            .nav-btn {
+                width: 30px;
+                height: 32px;
+            }
+            
+            .burger-menu {
+                right: 0;
+                top: 15px;
+            }
+            
+            .burger-line {
+                width: 20px;
+                height: 2px;
+            }
+            
+            .hero-news-left {
+                flex: 0 0 auto;
+            }
+            
+            .hero-news-title {
+                font-size: 18px;
+            }
+            
+            .hero-news-date {
+                font-size: 12px;
+            }
+            
+            .hero-news-button {
+                padding: 8px 25px;
+                font-size: 12px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-social-icon {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .side-panel {
+                width: 100%;
+            }
+            
+            .panel-content {
+                padding: 15px 20px 25px;
+            }
+            
+            #institutePanel .panel-content {
+                padding: 60px 20px 25px !important;
+            }
+            
+            .modal-navigation {
+                padding: 0 20px;
+                flex-wrap: wrap;
+                height: auto;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            
+            .modal-nav-items {
+                margin-left: 0;
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            
+            .modal-nav-buttons {
+                order: 2;
+                margin-left: 0;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .modal-nav-btn {
+                width: 35px;
+                height: 37px;
+            }
+            
+            .footer-content {
+                padding: 25px 20px 20px;
+                gap: 30px;
+            }
+            
+            .footer-logo-container {
+                width: 140px;
+            }
+            
+            .footer-icon {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .column-links a,
+            .spaced-contacts .contact-item {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .section-container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .footer-logo-container {
+                width: 120px;
+            }
+            
+            .footer-icon {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <header class="hero-section">
+        <div class="hero-bg"></div>
+        
+        <div class="section-container hero-container">
+            <div class="hero-nav">
+                <div class="logo"></div>
+                
+                <div class="nav-right-section">
+                    <div class="nav-top-line">
+                        <div class="nav-items">
+                            <span class="nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                            <span class="nav-item nav-institute-btn">Об институте</span>
+                            <span class="nav-item nav-science-btn">Наука</span>
+                            <span class="nav-item nav-procurement-btn">Гос закуп</span>
+                            <span class="nav-item nav-news-btn">Новости</span>
+                            <span class="nav-item nav-npa-btn">НПА</span>
+                            <span class="nav-item nav-contacts-btn">Контакты</span>
+                        </div>
+                        <div class="nav-buttons">
+                            <div class="nav-btn btn-nauka nav-science-btn"></div>
+                            <div class="nav-btn btn-zakup nav-procurement-btn"></div>
+                            <div class="nav-btn btn-kontakt nav-contacts-btn"></div>
+                        </div>
+                        <div class="burger-menu">
+                            <div class="burger-line"></div>
+                            <div class="burger-line"></div>
+                            <div class="burger-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="breadcrumb">Главная / Новости и СМИ</div>
+                    <h1 class="hero-title">Новости и СМИ Об Институте</h1>
+                    
+                    <!-- Линия под заголовком -->
+                    <div class="title-line"></div>
+
+                    <!-- Новый блок с новостью -->
+                    <div class="hero-news-block">
+                        <div class="hero-news-left">
+                            <div class="hero-news-image">
+                                <img src="/photo/Group 1000002742-2.png" alt="Новость">
+                            </div>
+                            
+                            <!-- Иконки соцсетей под картинкой -->
+                            <div class="hero-social-icons">
+                                <a href="#" class="hero-social-icon">
+                                    <img src="/photo/Group 34365.svg" alt="Соцсеть 1">
+                                </a>
+                                <a href="#" class="hero-social-icon">
+                                    <img src="/photo/Group 34364.svg" alt="Соцсеть 2">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-news-content">
+                            <div class="hero-news-date">25.10.25</div>
+                            <div class="hero-news-title">Взаимодействие нефтегазохимии<br> и аграрного сектора способствует<br> развитию экономики</div>
+                            <button class="hero-news-button">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Секция с сеткой новостей (ОСТАВЛЕНА БЕЗ ИЗМЕНЕНИЙ) -->
+    <section class="news-grid-section">
+        <div class="section-container">
+            <div class="news-grid">
+                <div class="news-row">
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="/photo/Group 1000002741-1.svg" alt="News 3">
+                            <img src="/photo/Group 1000002741-1.svg" alt="News 3 overlay">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-date">25.10.25</div>
+                            <div class="news-card-title">Обсуждение законов о свободе <br>Вероисповедания в Казахстане</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="/photo/Group 1000002742-1.svg" alt="News 4">
+                            <img src="/photo/Group 1000002742-1.svg" alt="News 4 overlay">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-date">25.10.25</div>
+                            <div class="news-card-title">Взаимодействие нефтегазохимии и аграрного<br> сектора способствует развитию экономики</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-row">
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="/photo/Group 1000002741-2.svg" alt="News 5">
+                            <img src="/photo/Group 1000002741-2.svg" alt="News 5 overlay">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-date">25.10.25</div>
+                            <div class="news-card-title">Обсуждение законов о свободе<br> Вероисповедания в Казахстане</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="/photo/Group 1000002742-2.svg" alt="News 6">
+                            <img src="/photo/Group 1000002742-2.svg" alt="News 6 overlay">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-date">25.10.25</div>
+                            <div class="news-card-title">Обсуждение законов о свободе <br>Вероисповедания в Казахстане</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-row">
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="/photo/Group 1000002741.png" alt="News 7">
+                            <img src="/photo/Group 1000002741.png" alt="News 7 overlay">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-date">25.10.25</div>
+                            <div class="news-card-title">Взаимодействие нефтегазохимии и аграрного<br>сектора способствует развитию экономики</div>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="/photo/Group 1000002742.png" alt="News 8">
+                            <img src="/photo/Group 1000002742.png" alt="News 8 overlay">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-card-date">25.10.25</div>
+                            <div class="news-card-title">Взаимодействие нефтегазохимии и аграрного<br>сектора способствует развитию экономики</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-section-line"></div>
+
+            <div class="news-load-more">
+                <button class="load-more-btn">Загрузить еще</button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    .news-grid-section {
+        padding: 60px 0;
+        background: white;
+    }
+
+    .news-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .news-row {
+        display: flex;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .news-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: white;
+    }
+
+    .news-card-image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+    }
+
+    .news-card-image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .news-card-image img:first-child {
+        z-index: 1;
+    }
+
+    .news-card-image img:last-child {
+        z-index: 2;
+    }
+
+    .news-card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .news-card-date {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .news-card-title {
+        font-family: 'Prata', serif;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #000;
+        font-weight: 400;
+    }
+
+    .news-section-line {
+        width: 100%;
+        height: 1px;
+        background: #e0e0e0;
+        margin: 40px 0 30px;
+    }
+
+    .news-load-more {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .load-more-btn {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #000;
+        background: none;
+        border: 1px solid #000;
+        padding: 12px 40px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .load-more-btn:hover {
+        background: #000;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .news-row {
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .news-card {
+            width: 100%;
+        }
+        
+        .news-card-image {
+            aspect-ratio: 16/10;
+        }
+        
+        .news-card-title {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .news-card-image {
+            aspect-ratio: 16/9;
+        }
+        
+        .load-more-btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .news-card-title {
+            font-size: 12px;
+        }
+    }
+    </style>
+
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-nav-items">
+            <div class="mobile-nav-item nav-kazakhstan-btn">Республика Казахстан</div>
+            <div class="mobile-nav-item nav-institute-btn">Об институте</div>
+            <div class="mobile-nav-item nav-science-btn">Наука</div>
+            <div class="mobile-nav-item nav-procurement-btn">Гос закуп</div>
+            <div class="mobile-nav-item nav-news-btn">Новости</div>
+            <div class="mobile-nav-item nav-npa-btn">НПА</div>
+            <div class="mobile-nav-item nav-contacts-btn">Контакты</div>
+        </div>
+    </div>
+
+    <div class="side-panel-overlay" id="panelOverlay"></div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <div class="footer-logo-container">
+                    <img src="/img/Group 1000002552.png" alt="GYLYM ORDASY" class="footer-logo-image">
+                </div>
+                <div class="footer-icons-horizontal">
+                    <a href="#" class="footer-icon">
+                        <img src="/img/Group 1000002466.png" alt="Иконка 1">
+                    </a>
+                    <a href="#" class="footer-icon">
+                        <img src="/img/Group 1000002465.png" alt="Иконка 2">
+                    </a>
+                    <a href="#" class="footer-icon">
+                        <img src="/img/Group 34364.png" alt="Иконка 3">
+                    </a>
+                    <a href="#" class="footer-icon">
+                        <img src="/img/Group 34363.png" alt="Иконка 4">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-columns-wrapper">
+                <div class="columns-top-line"></div>
+                <div class="row footer-columns">
+                    <!-- Колонки футера без изменений -->
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">РЕСПУБЛИКА КАЗАХСТАН</div>
+                            <ul class="column-links">
+                                <li><a href="pages/kazakhstan/president.html">Президент РК о науке</a></li>
+                                <li><a href="pages/kazakhstan/about.html">О науке в РК</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">ОБ ИНСТИТУТЕ</div>
+                            <ul class="column-links">
+                                <li><a href="pages/institute/history.html">История</a></li>
+                                <li><a href="pages/institute/mission.html">Миссия и задачи</a></li>
+                                <li><a href="pages/institute/structure.html">Структура</a></li>
+                                <li><a href="pages/institute/leadership.html">Руководство</a></li>
+                                <li><a href="pages/institute/partnership.html">Партнёрство и международные проекты</a></li>
+                                <li><a href="pages/contacts.html">Контакты</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">НАУКА-ПРОЕКТЫ</div>
+                            <ul class="column-links">
+                                <li><a href="pages/science/projects/council.html">Ученый совет</a></li>
+                                <li><a href="pages/science/projects/supervisory.html">Наблюдательный совет</a></li>
+                                <li><a href="pages/science/archive/about.html">Научный архив</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">НАУЧНЫЙ АРХИВ</div>
+                            <ul class="column-links">
+                                <li><a href="pages/science/archive/about.html">О архиве</a></li>
+                                <li><a href="pages/science/archive/funds.html">Архивные фонды</a></li>
+                                <li><a href="pages/science/archive/access.html">Доступ и услуги</a></li>
+                                <li><a href="pages/science/archive/catalog.html">Цифровой каталог</a></li>
+                                <li><a href="pages/science/archive/publications.html">Публикации и проекты</a></li>
+                                <li><a href="pages/science/archive/news.html">Новости и мероприятия</a></li>
+                                <li><a href="pages/science/archive/contacts.html">Контакты</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">ГОС ЗАКУП</div>
+                            <ul class="column-links">
+                                <li><a href="pages/procurement/goszakup.html">Госзакуп</a></li>
+                                <li><a href="pages/procurement/events.html">Мероприятия Закупки</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">НОВОСТИ</div>
+                            <ul class="column-links">
+                                <li><a href="pages/news/all.html">Новости</a></li>
+                                <li><a href="pages/news/events.html">Мероприятия</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">НПА</div>
+                            <ul class="column-links">
+                                <li><a href="pages/npa/vacancies.html">Вакансии</a></li>
+                                <li><a href="pages/npa/supervisory.html">Наблюдательный совет</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">ИНФРАСТРУКТУРА</div>
+                            <ul class="column-links">
+                                <li><a href="pages/infrastructure/library.html">Центральная научная библиотека</a></li>
+                                <li><a href="pages/museums/archaeology.html">Музей археологии</a></li>
+                                <li><a href="pages/museums/science-history.html">Музей истории науки</a></li>
+                                <li><a href="pages/museums/nature.html">Музей природы</a></li>
+                                <li><a href="pages/museums/rare-books.html">Музей редких книг</a></li>
+                                <li><a href="pages/infrastructure/restoration.html">Центр реставрации и консервации</a></li>
+                                <li><a href="pages/infrastructure/training.html">Центр подготовки научных кадров</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-column contacts-column spaced-contacts">
+                            <div class="column-title">КОНТАКТЫ</div>
+                            <div class="contact-item address"><strong>Казахстан г. Алматы</strong></div>
+                            <div class="contact-item phone">+7 777 333 10 00</div>
+                            <div class="contact-item phone">+7 777 333 10 01</div>
+                            <div class="contact-item email">info@mail.kz</div>
+                            <div class="contact-item email">admission@mail.kz</div>
+                            <div class="contact-item schedule">Понедельник–Пятница: 09:00–18:00</div>
+                            <div class="contact-item schedule">Суббота: 10:00–14:00</div>
+                            <div class="contact-item schedule">Воскресенье: Выходной</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container-12col">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="copyright">© 2025 Все права защищены.</div>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <div class="footer-terms">
+                            <a href="pages/terms.html">Условия использования</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 text-end">
+                        <div class="developer-text">develop by Zerone Technology</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const panels = {
+                'sciencePanel': document.getElementById('sciencePanel'),
+                'kazakhstanPanel': document.getElementById('kazakhstanPanel'),
+                'procurementPanel': document.getElementById('procurementPanel'),
+                'institutePanel': document.getElementById('institutePanel'),
+                'newsPanel': document.getElementById('newsPanel'),
+                'npaPanel': document.getElementById('npaPanel'),
+                'contactsPanel': document.getElementById('contactsPanel')
+            };
+            
+            const overlay = document.getElementById('panelOverlay');
+            const navItems = document.querySelectorAll('.nav-item[class*="nav-"], .modal-nav-item[class*="nav-"]');
+            const navButtons = document.querySelectorAll('.nav-btn[class*="nav-"], .modal-nav-btn[class*="nav-"]');
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            
+            let activePanel = null;
+            let isTransitioning = false;
+
+            function openPanel(panelId) {
+                if (isTransitioning) return;
+                if (!panels[panelId]) return;
+                
+                isTransitioning = true;
+                
+                overlay.classList.add('active');
+                document.body.classList.add('panel-open');
+                document.body.style.overflow = 'hidden';
+                
+                if (activePanel && activePanel !== panelId) {
+                    panels[activePanel].classList.remove('active');
+                }
+                
+                activePanel = panelId;
+                
+                setTimeout(() => {
+                    panels[panelId].classList.add('active');
+                    updateNavigation(panelId);
+                    
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 300);
+                }, 50);
+            }
+
+            function closeAllPanels() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                Object.values(panels).forEach(panel => {
+                    panel.classList.remove('active');
+                });
+                
+                setTimeout(() => {
+                    overlay.classList.remove('active');
+                    document.body.classList.remove('panel-open');
+                    document.body.style.overflow = '';
+                    
+                    resetNavigation();
+                    activePanel = null;
+                    
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 300);
+                }, 300);
+            }
+
+            function updateNavigation(panelId) {
+                navItems.forEach(item => item.classList.remove('active'));
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                
+                const panelType = panelId.replace('Panel', '');
+                const activeElements = document.querySelectorAll(`.nav-${panelType}, .nav-${panelType}-btn`);
+                
+                activeElements.forEach(el => {
+                    if (el.classList.contains('modal-nav-item') || 
+                        el.classList.contains('nav-item') || 
+                        el.classList.contains('nav-btn') || 
+                        el.classList.contains('modal-nav-btn')) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+
+            function resetNavigation() {
+                navItems.forEach(item => item.classList.remove('active'));
+                navButtons.forEach(btn => btn.classList.remove('active'));
+            }
+
+            navItems.forEach(item => {
+                if (item.classList.contains('nav-contacts-btn')) {
+                    item.style.opacity = '0.7';
+                    item.style.cursor = 'default';
+                    return;
+                }
+                
+                if (item.classList.contains('nav-kazakhstan-btn') || 
+                    item.classList.contains('nav-institute-btn') || 
+                    item.classList.contains('nav-science-btn') || 
+                    item.classList.contains('nav-procurement-btn') || 
+                    item.classList.contains('nav-news-btn') || 
+                    item.classList.contains('nav-npa-btn')) {
+                    
+                    item.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const panelClass = Array.from(this.classList)
+                            .find(cls => cls.startsWith('nav-') && cls.endsWith('-btn'));
+                        
+                        if (!panelClass) return;
+                        
+                        const panelType = panelClass.replace('nav-', '').replace('-btn', '');
+                        const panelId = panelType + 'Panel';
+                        
+                        if (activePanel === panelId) {
+                            closeAllPanels();
+                        } else {
+                            openPanel(panelId);
+                        }
+                    });
+                }
+            });
+
+            navButtons.forEach(btn => {
+                if (btn.classList.contains('btn-kontakt')) {
+                    btn.style.opacity = '0.7';
+                    btn.style.cursor = 'default';
+                    return;
+                }
+                
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const navClass = Array.from(this.classList).find(cls => cls.startsWith('nav-'));
+                    if (!navClass) return;
+                    
+                    let panelType = navClass.includes('-btn') 
+                        ? navClass.replace('nav-', '').replace('-btn', '')
+                        : navClass.replace('nav-', '');
+                    
+                    const panelId = panelType + 'Panel';
+                    
+                    if (activePanel === panelId) {
+                        closeAllPanels();
+                    } else {
+                        openPanel(panelId);
+                    }
+                });
+            });
+
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileOverlay = document.querySelector('.mobile-overlay');
+            
+            if (burgerMenu) {
+                burgerMenu.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    mobileOverlay.classList.toggle('active');
+                    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+            
+            if (mobileOverlay) {
+                mobileOverlay.addEventListener('click', function() {
+                    burgerMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const panelClass = Array.from(this.classList)
+                        .find(cls => cls.startsWith('nav-') && cls.endsWith('-btn'));
+                    
+                    if (!panelClass) return;
+                    
+                    const panelType = panelClass.replace('nav-', '').replace('-btn', '');
+                    const panelId = panelType + 'Panel';
+                    
+                    if (panels[panelId]) {
+                        burgerMenu.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        mobileOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        
+                        openPanel(panelId);
+                    }
+                });
+            });
+
+            overlay.addEventListener('click', function(e) {
+                if (!isTransitioning) closeAllPanels();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && activePanel) {
+                    closeAllPanels();
+                }
+            });
+
+            Object.values(panels).forEach(panel => {
+                panel.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+
+            document.querySelectorAll('.panel-item-content').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.classList.add('active');
+                    const line = this.nextElementSibling;
+                    if (line && line.classList.contains('panel-item-line')) {
+                        line.classList.add('active');
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                    const line = this.nextElementSibling;
+                    if (line && line.classList.contains('panel-item-line')) {
+                        line.classList.remove('active');
+                    }
+                });
+            });
+
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.addEventListener('click', function() {
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

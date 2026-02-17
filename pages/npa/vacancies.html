@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нормативно-правовые акты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prata:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Prata', serif;
+            line-height: 1.6;
+            background: white;
+        }
+
+        :root {
+            --container-padding-desktop: 60px;
+            --container-padding-laptop: 50px;
+            --container-padding-tablet: 40px;
+            --container-padding-mobile: 30px;
+            --container-padding-small: 20px;
+        }
+
+        .section-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: var(--container-padding-desktop);
+            padding-right: var(--container-padding-desktop);
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: 70vh;
+            background: linear-gradient(to right, rgba(254, 166, 66, 0.2), rgba(5, 109, 123, 0.2));
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 100;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-nav {
+            display: flex;
+            align-items: flex-start;
+            padding-top: 50px;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 300px;
+            height: 85px;
+            background: url('/img/Group 1000002552-2.svg') center/contain no-repeat;
+            flex-shrink: 0;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .nav-right-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .nav-top-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .nav-top-line::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: black;
+            z-index: 1;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            flex: 1;
+            padding-bottom: 5px;
+        }
+
+        .nav-item {
+            font-weight: 500;
+            font-size: 12px;
+            color: black;
+            cursor: pointer;
+            white-space: nowrap;
+            padding: 8px 0;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-item:hover {
+            color: #4848f1;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
+            padding-bottom: 10px;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 42px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .nav-btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn-nauka { 
+            background-image: url('/img/Group 1000002553.svg');
+        }
+
+        .btn-zakup { 
+            background-image: url('/img/Group 1000002555-2.svg');
+        }
+
+        .btn-kontakt { 
+            background-image: url('/img/Group 1000002556-2.svg');
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            position: absolute;
+            right: 0;
+            top: 25px;
+        }
+
+        .burger-line {
+            width: 25px;
+            height: 2px;
+            background: black;
+            transition: 0.3s;
+        }
+
+        .burger-menu.active .burger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .burger-menu.active .burger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active .burger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 0;
+            margin-top: 30px;
+            gap: 40px;
+        }
+
+        .hero-text {
+            margin-top: 20px;
+            flex: 1;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            line-height: 1.1;
+            color: black;
+            font-weight: 500;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .hero-description {
+            font-size: 13px;
+            line-height: 1.5;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 30px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .hero-description-left {
+            flex: 1;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: black;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: #1c2745;
+            z-index: 1000;
+            padding: 100px 30px 30px;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-nav-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-nav-item {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            font-family: 'Prata', serif;
+        }
+
+        .side-panel-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .side-panel-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .side-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
+            background: #0a0a0a;
+            z-index: 1000;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .side-panel.active {
+            transform: translateX(0);
+        }
+
+        .panel-content {
+            padding: 20px 80px 60px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-navigation {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 80px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-nav-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .modal-nav-item {
+            font-weight: 500;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            white-space: nowrap;
+            padding: 5px 0;
+            font-family: 'Prata', serif;
+            transition: color 0.3s;
+        }
+
+        .modal-nav-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .modal-nav-btn {
+            width: 35px;
+            height: 37px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .modal-nav-btn.btn-nauka { 
+            background-image: url('/img/Group 1000002553.png');
+        }
+
+        .modal-nav-btn.btn-zakup { 
+            background-image: url('/img/Group 1000002555.png');
+        }
+
+        .modal-nav-btn.btn-kontakt { 
+            background-image: url('/img/Group 1000002556.png');
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .panel-grid-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .panel-grid {
+            display: flex;
+            gap: 50px;
+            width: 100%;
+        }
+
+        .panel-left {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .panel-right {
+            flex: 0 0 35%;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .panel-section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .panel-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .panel-section:last-child::after {
+            display: none;
+        }
+
+        .panel-subtitle-small {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-family: "Times New Roman", serif;
+        }
+
+        .panel-item {
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .panel-item-content {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .panel-item-number {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            min-width: 40px;
+            font-family: 'Prata', serif;
+            transition: all 0.3s ease;
+        }
+
+        .panel-item-text {
+            flex: 1;
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-family: "Times New Roman", serif;
+            padding-right: 40px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .panel-item-arrow-top {
+            font-size: 1.6rem;
+            color: #cccccc;
+            position: absolute;
+            right: 0;
+            top: 15px;
+            font-family: 'Prata', serif;
+            transition: all 0.3s ease;
+            transform: translateX(0);
+            text-decoration: none;
+        }
+
+        .panel-item-line {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 15px 0;
+            width: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-item-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #0B99FF;
+            transition: left 0.3s ease;
+        }
+
+        .panel-item-content:hover .panel-item-number,
+        .panel-item-content:hover .panel-item-text {
+            color: #0B99FF !important;
+        }
+
+        .panel-item-content:hover .panel-item-arrow-top {
+            color: #0B99FF !important;
+            transform: translateX(5px);
+        }
+
+        .panel-item:hover .panel-item-line::after {
+            left: 0;
+        }
+
+        body.panel-open .hero-bg,
+        body.panel-open .hero-content {
+            filter: blur(10px);
+            pointer-events: none;
+            user-select: none;
+            transition: filter 0.3s ease;
+        }
+
+        body.panel-open .hero-nav {
+            filter: none !important;
+            position: relative;
+            z-index: 1001;
+            pointer-events: auto;
+        }
+
+        body.panel-open .hero-nav .logo {
+            filter: none !important;
+            position: relative;
+            z-index: 1002;
+            pointer-events: auto;
+        }
+
+        body.panel-open .nav-buttons {
+            filter: none !important;
+            pointer-events: auto !important;
+            position: relative;
+            z-index: 1002;
+        }
+
+        #kazakhstanPanel .panel-image {
+            max-width: 290px !important;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        #kazakhstanPanel .panel-right {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        #sciencePanel .panel-grid-container {
+            align-items: flex-start !important;
+            padding-top: 40px !important;
+            margin-top: 20px;
+        }
+
+        #sciencePanel .panel-content {
+            padding-top: 50px !important;
+        }
+
+        #institutePanel .panel-content {
+            padding: 90px 80px 40px !important;
+        }
+
+        #institutePanel .panel-grid-container {
+            align-items: flex-start !important;
+            padding-top: 0 !important;
+        }
+
+        .procurement-main-content,
+        .news-main-content,
+        .npa-main-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .procurement-text-block,
+        .news-text-block,
+        .npa-text-block {
+            flex: 1;
+        }
+
+        .procurement-main-title,
+        .news-main-title,
+        .npa-main-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 30px;
+            font-family: "Times New Roman", serif;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        .procurement-main-image,
+        .news-main-image,
+        .npa-main-image {
+            max-width: 320px !important;
+            height: auto;
+        }
+
+        .news-image-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .news-caption {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 320px;
+            font-family: "Times New Roman", serif;
+        }
+
+        .news-date {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .news-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        .documents-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .top-black-line {
+            width: 100%;
+            height: 1px;
+            background: black;
+            margin-bottom: 40px;
+        }
+
+        .documents-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .categories-column {
+            flex: 0 0 30%;
+            max-width: 30%;
+        }
+
+        .categories-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: black;
+            margin-bottom: 25px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .categories-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .categories-list li {
+            margin-bottom: 16px;
+        }
+
+        .category-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: black;
+            text-decoration: none;
+            transition: color 0.2s;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .category-link:hover {
+            color: #0B99FF;
+        }
+
+        .documents-column {
+            flex: 0 0 70%;
+            max-width: 70%;
+            overflow: hidden;
+        }
+
+        .documents-group {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .group-title {
+            font-family: 'Prata', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: black;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            width: 100%;
+            text-align: left;
+        }
+
+        .documents-list {
+            width: 100%;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .document-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            width: 100%;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .doc-name {
+            font-size: 15px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 70%;
+            text-align: left;
+        }
+
+        .doc-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .doc-date {
+            font-size: 14px;
+            color: #666;
+            font-family: 'Roboto', sans-serif;
+            white-space: nowrap;
+        }
+
+        .doc-icon {
+            font-size: 18px;
+            color: #999;
+            transition: transform 0.2s;
+            width: 16px;
+            text-align: center;
+            line-height: 1;
+        }
+
+        .document-item:hover .doc-icon {
+            transform: translateX(3px);
+            color: #0B99FF;
+        }
+
+        .initiatives-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .initiatives-container {
+            background: linear-gradient(90deg, #fea642, #056d7b);
+            padding: 60px;
+            position: relative;
+            min-height: 200px;
+            border-radius: 0;
+        }
+
+        .initiatives-content {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(100% - 120px);
+        }
+
+        .initiatives-title {
+            font-family: 'Prata', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 1.2;
+            margin: 0;
+            max-width: 80%;
+            text-align: left;
+        }
+
+        .initiatives-button-container {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .initiatives-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 35px;
+            font-family: 'Prata', serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: #111827;
+            background-color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .initiatives-btn:hover {
+            background-color: #111827;
+            color: white;
+        }
+
+        .footer {
+            background-color: #212121;
+            color: #fff;
+            padding: 0;
+            position: relative;
+        }
+
+        .footer-content {
+            padding: 40px 60px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-section {
+            flex: 0 0 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .footer-logo-container {
+            width: 180px;
+        }
+
+        .footer-logo-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .footer-icons-horizontal {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            transition: opacity 0.3s;
+            flex-shrink: 0;
+        }
+
+        .footer-icon:hover {
+            opacity: 0.8;
+        }
+
+        .footer-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-columns-wrapper {
+            flex: 1;
+            position: relative;
+            padding-top: 1px;
+            min-width: 300px;
+        }
+
+        .columns-top-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #fff;
+            z-index: 10;
+        }
+
+        .footer-columns {
+            padding-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .footer-column {
+            padding: 0 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-vertical-item {
+            margin-bottom: 35px;
+        }
+
+        .column-title {
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .column-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .column-links li {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .column-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 12px;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s;
+            text-align: left;
+        }
+
+        .column-links a:hover {
+            color: #fff;
+        }
+
+        .footer-column.contacts-column {
+            padding-top: 0;
+        }
+
+        .spaced-contacts .column-title {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .spaced-contacts .contact-item {
+            color: #b0b0b0;
+            font-size: 11px;
+            line-height: 1.4;
+            font-family: 'Prata', serif;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .spaced-contacts .address {
+            margin-bottom: 15px;
+        }
+
+        .spaced-contacts .phone:last-of-type {
+            margin-bottom: 18px;
+        }
+
+        .spaced-contacts .email:last-of-type {
+            margin-bottom: 18px;
+        }
+
+        .spaced-contacts strong {
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .footer-bottom {
+            background-color: #212121;
+            padding: 20px 0;
+        }
+
+        .footer-bottom .container-12col {
+            max-width: 1200px;
+            padding-left: 60px;
+            padding-right: 60px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 11px;
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+        }
+
+        .footer-terms a {
+            color: #666;
+            text-decoration: none;
+            font-size: 11px;
+            transition: color 0.3s;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer-terms a:hover {
+            color: #999;
+        }
+
+        .developer-text {
+            color: #666;
+            font-size: 11px;
+            font-family: 'Roboto', sans-serif;
+            text-align: right;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .col-lg-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        .col-md-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-end {
+            text-align: right;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 1199px) {
+            :root {
+                --container-padding-desktop: 50px;
+            }
+            
+            .section-container {
+                padding-left: var(--container-padding-desktop);
+                padding-right: var(--container-padding-desktop);
+            }
+            
+            .side-panel {
+                width: 85%;
+            }
+            
+            .panel-content {
+                padding: 20px 50px 40px;
+            }
+            
+            #institutePanel .panel-content {
+                padding: 80px 50px 40px !important;
+            }
+            
+            .modal-navigation {
+                padding: 0 50px;
+                height: 70px;
+            }
+            
+            .footer-content {
+                padding: 40px 50px 30px;
+                gap: 60px;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            :root {
+                --container-padding-desktop: 40px;
+            }
+            
+            .section-container {
+                padding-left: var(--container-padding-desktop);
+                padding-right: var(--container-padding-desktop);
+            }
+            
+            .nav-items {
+                display: none;
+            }
+            
+            .burger-menu {
+                display: flex;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+                text-align: left;
+                padding: 15px;
+                background: rgba(28, 39, 69, 0.7);
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                margin-top: 15px;
+                text-align: left;
+            }
+            
+            .logo {
+                width: 250px;
+                height: 70px;
+            }
+            
+            .side-panel {
+                width: 85%;
+            }
+            
+            .documents-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .categories-column,
+            .documents-column {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .group-title {
+                font-size: 22px;
+                text-align: left;
+            }
+            
+            .footer-content {
+                padding: 40px 40px 30px;
+                gap: 50px;
+            }
+            
+            .footer-logo-section {
+                flex: 0 0 180px;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            :root {
+                --container-padding-desktop: 30px;
+            }
+            
+            .section-container {
+                padding-left: var(--container-padding-desktop);
+                padding-right: var(--container-padding-desktop);
+            }
+            
+            .hero-section {
+                min-height: 60vh;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+                margin-top: 10px;
+                text-align: left;
+            }
+            
+            .logo {
+                width: 220px;
+                height: 65px;
+            }
+            
+            .nav-buttons {
+                right: 40px;
+                top: 15px;
+                gap: 5px;
+            }
+            
+            .nav-btn {
+                width: 35px;
+                height: 37px;
+            }
+            
+            .burger-menu {
+                right: 0;
+                top: 20px;
+            }
+            
+            .initiatives-section {
+                padding: 40px 0;
+            }
+            
+            .initiatives-container {
+                padding: 30px;
+                min-height: 140px;
+            }
+            
+            .initiatives-content {
+                width: calc(100% - 60px);
+            }
+            
+            .initiatives-title {
+                font-size: 24px;
+                max-width: 95%;
+                text-align: left;
+            }
+            
+            .initiatives-button-container {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .initiatives-btn {
+                padding: 9px 22px;
+                font-size: 11px;
+            }
+            
+            .side-panel {
+                width: 90%;
+            }
+            
+            .panel-content {
+                padding: 20px 35px 30px;
+            }
+            
+            #institutePanel .panel-content {
+                padding: 70px 35px 30px !important;
+            }
+            
+            .modal-navigation {
+                padding: 0 35px;
+                height: 60px;
+            }
+            
+            .document-item {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .doc-name {
+                max-width: 100%;
+                white-space: normal;
+                text-align: left;
+            }
+            
+            .doc-meta {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .footer-content {
+                padding: 30px 30px 25px;
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .footer-logo-section {
+                flex: 0 0 auto;
+                width: 100%;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .footer-logo-container {
+                width: 160px;
+            }
+            
+            .footer-icons-horizontal {
+                justify-content: flex-start;
+            }
+            
+            .footer-columns-wrapper {
+                min-width: 100%;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            
+            .footer-bottom .row > div {
+                text-align: left !important;
+                margin-bottom: 15px;
+            }
+            
+            .footer-bottom .text-end {
+                text-align: left !important;
+            }
+            
+            .developer-text {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 575px) {
+            :root {
+                --container-padding-desktop: 20px;
+            }
+            
+            .section-container {
+                padding-left: var(--container-padding-desktop);
+                padding-right: var(--container-padding-desktop);
+            }
+            
+            .hero-section {
+                min-height: 50vh;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+                margin-top: 8px;
+                text-align: left;
+            }
+            
+            .logo {
+                width: 180px;
+                height: 55px;
+            }
+            
+            .nav-buttons {
+                right: 30px;
+                top: 15px;
+            }
+            
+            .nav-btn {
+                width: 30px;
+                height: 32px;
+            }
+            
+            .burger-menu {
+                right: 0;
+                top: 15px;
+            }
+            
+            .burger-line {
+                width: 20px;
+                height: 2px;
+            }
+            
+            .initiatives-section {
+                padding: 30px 0;
+            }
+            
+            .initiatives-container {
+                padding: 25px;
+                min-height: 120px;
+            }
+            
+            .initiatives-content {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .initiatives-title {
+                font-size: 20px;
+                max-width: 100%;
+                text-align: left;
+            }
+            
+            .initiatives-button-container {
+                position: static;
+                text-align: right;
+            }
+            
+            .initiatives-btn {
+                padding: 8px 20px;
+                font-size: 10px;
+            }
+            
+            .side-panel {
+                width: 100%;
+            }
+            
+            .panel-content {
+                padding: 15px 20px 25px;
+            }
+            
+            #institutePanel .panel-content {
+                padding: 60px 20px 25px !important;
+            }
+            
+            .modal-navigation {
+                padding: 0 20px;
+                flex-wrap: wrap;
+                height: auto;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+            
+            .modal-nav-items {
+                margin-left: 0;
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            
+            .modal-nav-buttons {
+                order: 2;
+                margin-left: 0;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .footer-content {
+                padding: 25px 20px 20px;
+                gap: 30px;
+            }
+            
+            .footer-logo-container {
+                width: 140px;
+            }
+            
+            .footer-icon {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .footer-bottom .container-12col {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .copyright,
+            .footer-terms a,
+            .developer-text {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="section-container hero-container">
+            <div class="hero-nav">
+                <div class="logo"></div>
+                <div class="nav-right-section">
+                    <div class="nav-top-line">
+                        <div class="nav-items">
+                            <span class="nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                            <span class="nav-item nav-institute-btn">Об институте</span>
+                            <span class="nav-item nav-science-btn">Наука</span>
+                            <span class="nav-item nav-procurement-btn">Гос закуп</span>
+                            <span class="nav-item nav-news-btn">Новости</span>
+                            <span class="nav-item nav-npa-btn">НПА</span>
+                            <span class="nav-item nav-contacts-btn">Контакты</span>
+                        </div>
+                        <div class="nav-buttons">
+                            <div class="nav-btn btn-nauka nav-science-btn"></div>
+                            <div class="nav-btn btn-zakup nav-procurement-btn"></div>
+                            <div class="nav-btn btn-kontakt nav-contacts-btn"></div>
+                        </div>
+                        <div class="burger-menu">
+                            <div class="burger-line"></div>
+                            <div class="burger-line"></div>
+                            <div class="burger-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="breadcrumb">Главная / НПА</div>
+                    <h1 class="hero-title">Нормативно-правовые акты</h1>
+                    <div class="hero-description">
+                        <div class="hero-description-left">
+                            В этом разделе представлены законы, постановления, уставные документы и приказы, регулирующие деятельность Национальной академии наук Республики Казахстан при Президенте РК.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-nav-items">
+            <div class="mobile-nav-item nav-kazakhstan-btn">Республика Казахстан</div>
+            <div class="mobile-nav-item nav-institute-btn">Об институте</div>
+            <div class="mobile-nav-item nav-science-btn">Наука</div>
+            <div class="mobile-nav-item nav-procurement-btn">Гос закуп</div>
+            <div class="mobile-nav-item nav-news-btn">Новости</div>
+            <div class="mobile-nav-item nav-npa-btn">НПА</div>
+            <div class="mobile-nav-item nav-contacts-btn">Контакты</div>
+        </div>
+    </div>
+
+    <div class="side-panel-overlay" id="panelOverlay"></div>
+
+    <div class="side-panel" id="sciencePanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left" style="width:100%">
+                        <div style="display:flex; gap:40px;">
+                            <div style="flex:1">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Научный архив</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/archive/about.html" class="panel-item-text">О архиве</a>
+                                            <a href="pages/archive/about.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/archive/funds.html" class="panel-item-text">Архивные фонды</a>
+                                            <a href="pages/archive/funds.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/archive/access.html" class="panel-item-text">Доступ и услуги</a>
+                                            <a href="pages/archive/access.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">04</span>
+                                            <a href="pages/archive/catalog.html" class="panel-item-text">Цифровой каталог</a>
+                                            <a href="pages/archive/catalog.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">05</span>
+                                            <a href="pages/archive/publications.html" class="panel-item-text">Публикации и проекты</a>
+                                            <a href="pages/archive/publications.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">06</span>
+                                            <a href="pages/archive/news.html" class="panel-item-text">Новости и мероприятия</a>
+                                            <a href="pages/archive/news.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">07</span>
+                                            <a href="pages/archive/contacts.html" class="panel-item-text">Контакты</a>
+                                            <a href="pages/archive/contacts.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex:1">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Наука - Проекты</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/science/council.html" class="panel-item-text">Ученый совет</a>
+                                            <a href="pages/science/council.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/science/supervisory.html" class="panel-item-text">Наблюдательный совет</a>
+                                            <a href="pages/science/supervisory.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="kazakhstanPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="panel-section">
+                            <h3 class="panel-subtitle-small">Республика Казахстан</h3>
+                            <div class="panel-item">
+                                <div class="panel-item-content">
+                                    <span class="panel-item-number">01</span>
+                                    <a href="pages/kazakhstan/president.html" class="panel-item-text">Президент РК о науке</a>
+                                    <a href="pages/kazakhstan/president.html" class="panel-item-arrow-top">→</a>
+                                </div>
+                                <div class="panel-item-line"></div>
+                            </div>
+                            <div class="panel-item">
+                                <div class="panel-item-content">
+                                    <span class="panel-item-number">02</span>
+                                    <a href="pages/kazakhstan/about.html" class="panel-item-text">О науке в РК</a>
+                                    <a href="pages/kazakhstan/about.html" class="panel-item-arrow-top">→</a>
+                                </div>
+                                <div class="panel-item-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-right">
+                        <div class="panel-image-container">
+                            <img src="/img/Group 1000002733-3.png" alt="Наука Казахстан" class="panel-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="procurementPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="procurement-main-content">
+                            <div class="procurement-text-block">
+                                <h3 class="procurement-main-title">Государственные закупки</h3>
+                                <div class="procurement-numbers">
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/procurement/main.html" class="panel-item-text">Госзакуп</a>
+                                            <a href="pages/procurement/main.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/procurement/events.html" class="panel-item-text">Мероприятия Закупки</a>
+                                            <a href="pages/procurement/events.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="procurement-image-block">
+                                <img src="/img/Group 1000002733-4.png" alt="Гос закуп" class="procurement-main-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="newsPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="news-main-content">
+                            <div class="news-text-block">
+                                <h3 class="news-main-title">Новости</h3>
+                                <div class="news-numbers">
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/news/main.html" class="panel-item-text">Новости</a>
+                                            <a href="pages/news/main.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/news/events.html" class="panel-item-text">Мероприятия</a>
+                                            <a href="pages/news/events.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-image-block">
+                                <img src="/img/Group 1000002733-5.png" alt="Новости" class="news-main-image">
+                                <div class="news-caption">
+                                    <div class="news-date">25.10.25</div>
+                                    <div class="news-description">Обсуждение законов о свободе Вероисповедания в Казахстане</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="npaPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="npa-main-content">
+                            <div class="npa-text-block">
+                                <h3 class="npa-main-title">Нормативно-правовые акты</h3>
+                                <div class="npa-numbers">
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/npa/vacancies.html" class="panel-item-text">Вакансии</a>
+                                            <a href="pages/npa/vacancies.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/npa/supervisory.html" class="panel-item-text">Наблюдательный совет</a>
+                                            <a href="pages/npa/supervisory.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="npa-image-block">
+                                <img src="/img/Group 1000002733-6.png" alt="НПА" class="npa-main-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="institutePanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left" style="width:100%">
+                        <div style="display:flex; gap:40px;">
+                            <div style="flex:1">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Об институте</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/institute/history.html" class="panel-item-text">История</a>
+                                            <a href="pages/institute/history.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/institute/mission.html" class="panel-item-text">Миссия и задачи</a>
+                                            <a href="pages/institute/mission.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/institute/structure.html" class="panel-item-text">Структура</a>
+                                            <a href="pages/institute/structure.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">04</span>
+                                            <a href="pages/institute/leadership.html" class="panel-item-text">Руководство</a>
+                                            <a href="pages/institute/leadership.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">05</span>
+                                            <a href="pages/institute/partnership.html" class="panel-item-text">Партнёрство и международные проекты</a>
+                                            <a href="pages/institute/partnership.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                                <div class="panel-section" style="margin-top:40px">
+                                    <h3 class="panel-subtitle-small">Инфраструктура</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/infrastructure/library.html" class="panel-item-text">Центральная научная библиотека</a>
+                                            <a href="pages/infrastructure/library.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/infrastructure/restoration.html" class="panel-item-text">Центр реставрации и консервации</a>
+                                            <a href="pages/infrastructure/restoration.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/infrastructure/training.html" class="panel-item-text">Центр подготовки научных кадров</a>
+                                            <a href="pages/infrastructure/training.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex:1">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Музеи</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/museums/archaeology.html" class="panel-item-text">Музей археологии</a>
+                                            <a href="pages/museums/archaeology.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/museums/science-history.html" class="panel-item-text">Музей истории науки</a>
+                                            <a href="pages/museums/science-history.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/museums/nature.html" class="panel-item-text">Музей природы</a>
+                                            <a href="pages/museums/nature.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">04</span>
+                                            <a href="pages/museums/rare-books.html" class="panel-item-text">Музей редких книг</a>
+                                            <a href="pages/museums/rare-books.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="contactsPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="panel-section">
+                            <h3 class="panel-subtitle-small">Контакты</h3>
+                            <div class="panel-item">
+                                <div class="panel-item-content">
+                                    <span class="panel-item-number">01</span>
+                                    <a href="pages/contacts.html" class="panel-item-text">Контактная информация</a>
+                                    <a href="pages/contacts.html" class="panel-item-arrow-top">→</a>
+                                </div>
+                                <div class="panel-item-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="documents-section">
+        <div class="section-container">
+            <div class="top-black-line"></div>
+            <div class="documents-container">
+                <div class="categories-column">
+                    <h4 class="categories-title">НАВИГАЦИЯ ПО КАТЕГОРИЯМ</h4>
+                    <ul class="categories-list">
+                        <li><a href="#" class="category-link">Законы Республики Казахстан</a></li>
+                        <li><a href="#" class="category-link">Постановления и указы</a></li>
+                        <li><a href="#" class="category-link">Приказы и распоряжения</a></li>
+                        <li><a href="#" class="category-link">Уставные документы Академии</a></li>
+                        <li><a href="#" class="category-link">Прочие материалы</a></li>
+                    </ul>
+                </div>
+                <div class="documents-column">
+                    <div class="documents-group">
+                        <h3 class="group-title">Законы Республики Казахстан</h3>
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="documents-group">
+                        <h3 class="group-title">Постановления и указы</h3>
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="documents-group">
+                        <h3 class="group-title">Приказы и распоряжения</h3>
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="documents-group">
+                        <h3 class="group-title">Уставные документы Академии</h3>
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="documents-group">
+                        <h3 class="group-title">Прочие материалы</h3>
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <span class="doc-name">Название документа</span>
+                                <div class="doc-meta">
+                                    <span class="doc-date">21.12.25</span>
+                                    <span class="doc-icon">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="initiatives-section">
+        <div class="section-container">
+            <div class="initiatives-container">
+                <div class="initiatives-content">
+                    <h2 class="initiatives-title">Узнайте больше о международном сотрудничестве</h2>
+                </div>
+                <div class="initiatives-button-container">
+                    <a href="#" class="initiatives-btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <div class="footer-logo-container">
+                    <img src="/img/Group 1000002552.png" alt="GYLYM ORDASY" class="footer-logo-image">
+                </div>
+                <div class="footer-icons-horizontal">
+                    <a href="#" class="footer-icon"><img src="/img/Group 1000002466.png" alt="Иконка 1"></a>
+                    <a href="#" class="footer-icon"><img src="/img/Group 1000002465.png" alt="Иконка 2"></a>
+                    <a href="#" class="footer-icon"><img src="/img/Group 34364.png" alt="Иконка 3"></a>
+                    <a href="#" class="footer-icon"><img src="/img/Group 34363.png" alt="Иконка 4"></a>
+                </div>
+            </div>
+            <div class="footer-columns-wrapper">
+                <div class="columns-top-line"></div>
+                <div class="row footer-columns">
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">РЕСПУБЛИКА КАЗАХСТАН</div>
+                            <ul class="column-links">
+                                <li><a href="pages/kazakhstan/president.html">Президент РК о науке</a></li>
+                                <li><a href="pages/kazakhstan/about.html">О науке в РК</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">ОБ ИНСТИТУТЕ</div>
+                            <ul class="column-links">
+                                <li><a href="pages/institute/history.html">История</a></li>
+                                <li><a href="pages/institute/mission.html">Миссия и задачи</a></li>
+                                <li><a href="pages/institute/structure.html">Структура</a></li>
+                                <li><a href="pages/institute/leadership.html">Руководство</a></li>
+                                <li><a href="pages/institute/partnership.html">Партнёрство и международные проекты</a></li>
+                                <li><a href="pages/contacts.html">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">НАУКА-ПРОЕКТЫ</div>
+                            <ul class="column-links">
+                                <li><a href="pages/science/projects/council.html">Ученый совет</a></li>
+                                <li><a href="pages/science/projects/supervisory.html">Наблюдательный совет</a></li>
+                                <li><a href="pages/science/archive/about.html">Научный архив</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">ГОС ЗАКУП</div>
+                            <ul class="column-links">
+                                <li><a href="pages/procurement/goszakup.html">Госзакуп</a></li>
+                                <li><a href="pages/procurement/events.html">Мероприятия Закупки</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">НОВОСТИ</div>
+                            <ul class="column-links">
+                                <li><a href="pages/news/all.html">Новости</a></li>
+                                <li><a href="pages/news/events.html">Мероприятия</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-vertical-item mb-4">
+                            <div class="column-title">ИНФРАСТРУКТУРА</div>
+                            <ul class="column-links">
+                                <li><a href="pages/infrastructure/library.html">Центральная научная библиотека</a></li>
+                                <li><a href="pages/museums/archaeology.html">Музей археологии</a></li>
+                                <li><a href="pages/museums/science-history.html">Музей истории науки</a></li>
+                                <li><a href="pages/museums/nature.html">Музей природы</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 footer-column">
+                        <div class="footer-column contacts-column spaced-contacts">
+                            <div class="column-title">КОНТАКТЫ</div>
+                            <div class="contact-item address"><strong>Казахстан г. Алматы</strong></div>
+                            <div class="contact-item phone">+7 777 333 10 00</div>
+                            <div class="contact-item phone">+7 777 333 10 01</div>
+                            <div class="contact-item email">info@mail.kz</div>
+                            <div class="contact-item email">admission@mail.kz</div>
+                            <div class="contact-item schedule">Понедельник–Пятница: 09:00–18:00</div>
+                            <div class="contact-item schedule">Суббота: 10:00–14:00</div>
+                            <div class="contact-item schedule">Воскресенье: Выходной</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container-12col">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4">
+                        <div class="copyright">© 2025 Все права защищены.</div>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <div class="footer-terms"><a href="pages/terms.html">Условия использования</a></div>
+                    </div>
+                    <div class="col-12 col-md-4 text-end">
+                        <div class="developer-text">develop by Zerone Technology</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const panels = {
+                sciencePanel: document.getElementById('sciencePanel'),
+                kazakhstanPanel: document.getElementById('kazakhstanPanel'),
+                procurementPanel: document.getElementById('procurementPanel'),
+                institutePanel: document.getElementById('institutePanel'),
+                newsPanel: document.getElementById('newsPanel'),
+                npaPanel: document.getElementById('npaPanel'),
+                contactsPanel: document.getElementById('contactsPanel')
+            };
+            
+            const overlay = document.getElementById('panelOverlay');
+            const navItems = document.querySelectorAll('.nav-item[class*="nav-"], .modal-nav-item[class*="nav-"]');
+            const navButtons = document.querySelectorAll('.nav-btn[class*="nav-"], .modal-nav-btn[class*="nav-"]');
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            
+            let activePanel = null;
+            let isTransitioning = false;
+
+            function openPanel(panelId) {
+                if (isTransitioning || !panels[panelId]) return;
+                isTransitioning = true;
+                
+                overlay.classList.add('active');
+                document.body.classList.add('panel-open');
+                document.body.style.overflow = 'hidden';
+                
+                if (activePanel && activePanel !== panelId) {
+                    panels[activePanel].classList.remove('active');
+                }
+                
+                activePanel = panelId;
+                
+                setTimeout(() => {
+                    panels[panelId].classList.add('active');
+                    setTimeout(() => { isTransitioning = false; }, 300);
+                }, 50);
+            }
+
+            function closeAllPanels() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                Object.values(panels).forEach(panel => panel.classList.remove('active'));
+                
+                setTimeout(() => {
+                    overlay.classList.remove('active');
+                    document.body.classList.remove('panel-open');
+                    document.body.style.overflow = '';
+                    activePanel = null;
+                    setTimeout(() => { isTransitioning = false; }, 300);
+                }, 300);
+            }
+
+            navItems.forEach(item => {
+                if (item.classList.contains('nav-contacts-btn')) {
+                    item.style.opacity = '0.7';
+                    item.style.cursor = 'default';
+                    return;
+                }
+                
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const panelClass = Array.from(this.classList).find(cls => cls.startsWith('nav-') && cls.endsWith('-btn'));
+                    if (!panelClass) return;
+                    
+                    const panelType = panelClass.replace('nav-', '').replace('-btn', '');
+                    const panelId = panelType + 'Panel';
+                    
+                    if (activePanel === panelId) closeAllPanels();
+                    else openPanel(panelId);
+                });
+            });
+
+            navButtons.forEach(btn => {
+                if (btn.classList.contains('btn-kontakt')) {
+                    btn.style.opacity = '0.7';
+                    btn.style.cursor = 'default';
+                    return;
+                }
+                
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const navClass = Array.from(this.classList).find(cls => cls.startsWith('nav-'));
+                    if (!navClass) return;
+                    
+                    let panelType = navClass.includes('-btn') ? navClass.replace('nav-', '').replace('-btn', '') : navClass.replace('nav-', '');
+                    const panelId = panelType + 'Panel';
+                    
+                    if (activePanel === panelId) closeAllPanels();
+                    else openPanel(panelId);
+                });
+            });
+
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileOverlay = document.querySelector('.mobile-overlay');
+            
+            if (burgerMenu) {
+                burgerMenu.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    mobileOverlay.classList.toggle('active');
+                    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+            
+            if (mobileOverlay) {
+                mobileOverlay.addEventListener('click', function() {
+                    burgerMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const panelClass = Array.from(this.classList).find(cls => cls.startsWith('nav-') && cls.endsWith('-btn'));
+                    if (!panelClass) return;
+                    
+                    const panelType = panelClass.replace('nav-', '').replace('-btn', '');
+                    const panelId = panelType + 'Panel';
+                    
+                    if (panels[panelId]) {
+                        burgerMenu.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        mobileOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        openPanel(panelId);
+                    }
+                });
+            });
+
+            overlay.addEventListener('click', closeAllPanels);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && activePanel) closeAllPanels();
+            });
+
+            Object.values(panels).forEach(panel => {
+                panel.addEventListener('click', e => e.stopPropagation());
+            });
+
+            const logo = document.querySelector('.logo');
+            if (logo) {
+                logo.addEventListener('click', () => window.location.href = 'index.html');
+            }
+        });
+    </script>
+</body>
+</html>

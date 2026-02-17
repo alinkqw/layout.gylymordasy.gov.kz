@@ -20,24 +20,24 @@
         
         <div class="hero-container">
             <div class="hero-nav">
-                <div class="logo" onclick="location.href='index.html'"></div>
+                <div class="logo"></div>
                 
                 <div class="nav-right-section">
                     <div class="nav-top-line">
                         <div class="nav-items">
-                            <a href="index.html" class="nav-item nav-kazakhstan-btn">Республика Казахстан</a>
-                            <a href="pages/institute/history.html" class="nav-item nav-institute-btn">Об институте</a>
-                            <a href="pages/science/archive/about.html" class="nav-item nav-science-btn">Наука</a>
-                            <a href="pages/procurement/goszakup.html" class="nav-item nav-procurement-btn">Гос закуп</a>
-                            <a href="pages/news/all.html" class="nav-item nav-news-btn">Новости</a>
-                            <a href="pages/npa/vacancies.html" class="nav-item nav-npa-btn">НПА</a>
-                            <a href="pages/contacts.html" class="nav-item nav-contacts-btn">Контакты</a>
+                            <span class="nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                            <span class="nav-item nav-institute-btn">Об институте</span>
+                            <span class="nav-item nav-science-btn">Наука</span>
+                            <span class="nav-item nav-procurement-btn">Гос закуп</span>
+                            <span class="nav-item nav-news-btn">Новости</span>
+                            <span class="nav-item nav-npa-btn">НПА</span>
+                            <span class="nav-item nav-contacts-btn">Контакты</span>
                         </div>
                         
                         <div class="nav-buttons">
-                            <a href="pages/science/archive/about.html" class="nav-btn btn-nauka" title="Наука"></a>
-                            <a href="pages/procurement/goszakup.html" class="nav-btn btn-zakup" title="Госзакуп"></a>
-                            <a href="pages/contacts.html" class="nav-btn btn-kontakt" title="Контакты"></a>
+                            <div class="nav-btn btn-nauka nav-science-btn"></div>
+                            <div class="nav-btn btn-zakup nav-procurement-btn"></div>
+                            <div class="nav-btn btn-kontakt nav-contacts-btn"></div>
                         </div>
                         
                         <div class="burger-menu">
@@ -61,6 +61,533 @@
         </div>
     </header>
 
+    <!-- Боковые панели навигации -->
+    <div class="side-panel-overlay" id="panelOverlay"></div>
+
+    <div class="side-panel" id="sciencePanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left" style="width: 100%;">
+                        <div style="display: flex; gap: 40px; width: 100%;">
+                            <div style="flex: 1;">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Научный архив</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/archive/about.html" class="panel-item-text">О архиве</a>
+                                            <a href="pages/archive/about.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/archive/funds.html" class="panel-item-text">Архивные фонды</a>
+                                            <a href="pages/archive/funds.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/archive/access.html" class="panel-item-text">Доступ и услуги</a>
+                                            <a href="pages/archive/access.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">04</span>
+                                            <a href="pages/archive/catalog.html" class="panel-item-text">Цифровой каталог</a>
+                                            <a href="pages/archive/catalog.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">05</span>
+                                            <a href="pages/archive/publications.html" class="panel-item-text">Публикации и проекты</a>
+                                            <a href="pages/archive/publications.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">06</span>
+                                            <a href="pages/archive/news.html" class="panel-item-text">Новости и мероприятия</a>
+                                            <a href="pages/archive/news.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">07</span>
+                                            <a href="pages/archive/contacts.html" class="panel-item-text">Контакты</a>
+                                            <a href="pages/archive/contacts.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex: 1;">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Наука - Проекты</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/science/council.html" class="panel-item-text">Ученый совет</a>
+                                            <a href="pages/science/council.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/science/supervisory.html" class="panel-item-text">Наблюдательный совет</a>
+                                            <a href="pages/science/supervisory.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="kazakhstanPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="panel-section">
+                            <h3 class="panel-subtitle-small">Республика Казахстан</h3>
+                            <div class="panel-item">
+                                <div class="panel-item-content">
+                                    <span class="panel-item-number">01</span>
+                                    <a href="pages/kazakhstan/president.html" class="panel-item-text">Президент РК о науке</a>
+                                    <a href="pages/kazakhstan/president.html" class="panel-item-arrow-top">→</a>
+                                </div>
+                                <div class="panel-item-line"></div>
+                            </div>
+                            <div class="panel-item">
+                                <div class="panel-item-content">
+                                    <span class="panel-item-number">02</span>
+                                    <a href="pages/kazakhstan/about.html" class="panel-item-text">О науке в РК</a>
+                                    <a href="pages/kazakhstan/about.html" class="panel-item-arrow-top">→</a>
+                                </div>
+                                <div class="panel-item-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-right">
+                        <div class="panel-image-container">
+                            <img src="/img/Group 1000002733-3.png" alt="Наука Казахстан" class="panel-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="procurementPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="procurement-main-content">
+                            <div class="procurement-text-block">
+                                <h3 class="procurement-main-title">Государственные закупки</h3>
+                                <div class="procurement-numbers">
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/procurement/main.html" class="panel-item-text">Госзакуп</a>
+                                            <a href="pages/procurement/main.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/procurement/events.html" class="panel-item-text">Мероприятия Закупки</a>
+                                            <a href="pages/procurement/events.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="procurement-image-block">
+                                <img src="/img/Group 1000002733-4.png" alt="Гос закуп" class="procurement-main-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="newsPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="news-main-content">
+                            <div class="news-text-block">
+                                <h3 class="news-main-title">Новости</h3>
+                                <div class="news-numbers">
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/news/main.html" class="panel-item-text">Новости</a>
+                                            <a href="pages/news/main.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/news/events.html" class="panel-item-text">Мероприятия</a>
+                                            <a href="pages/news/events.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-image-block">
+                                <img src="/img/Group 1000002733-5.png" alt="Новости" class="news-main-image">
+                                <div class="news-caption">
+                                    <div class="news-date">25.10.25</div>
+                                    <div class="news-description">Обсуждение законов о свободе Вероисповедания в Казахстане</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="npaPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="npa-main-content">
+                            <div class="npa-text-block">
+                                <h3 class="npa-main-title">Нормативно-правовые акты</h3>
+                                <div class="npa-numbers">
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/npa/vacancies.html" class="panel-item-text">Вакансии</a>
+                                            <a href="pages/npa/vacancies.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/npa/supervisory.html" class="panel-item-text">Наблюдательный совет</a>
+                                            <a href="pages/npa/supervisory.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="npa-image-block">
+                                <img src="/img/Group 1000002733-6.png" alt="НПА" class="npa-main-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="institutePanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left" style="width: 100%;">
+                        <div style="display: flex; gap: 40px; width: 100%;">
+                            <div style="flex: 1;">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Об институте</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/institute/history.html" class="panel-item-text">История</a>
+                                            <a href="pages/institute/history.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/institute/mission.html" class="panel-item-text">Миссия и задачи</a>
+                                            <a href="pages/institute/mission.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/institute/structure.html" class="panel-item-text">Структура</a>
+                                            <a href="pages/institute/structure.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">04</span>
+                                            <a href="pages/institute/leadership.html" class="panel-item-text">Руководство</a>
+                                            <a href="pages/institute/leadership.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">05</span>
+                                            <a href="pages/institute/partnership.html" class="panel-item-text">Партнёрство и международные проекты</a>
+                                            <a href="pages/institute/partnership.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="panel-section" style="margin-top: 40px;">
+                                    <h3 class="panel-subtitle-small">Инфраструктура</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/infrastructure/library.html" class="panel-item-text">Центральная научная библиотека</a>
+                                            <a href="pages/infrastructure/library.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/infrastructure/restoration.html" class="panel-item-text">Центр реставрации и консервации</a>
+                                            <a href="pages/infrastructure/restoration.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/infrastructure/training.html" class="panel-item-text">Центр подготовки научных кадров</a>
+                                            <a href="pages/infrastructure/training.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="flex: 1;">
+                                <div class="panel-section">
+                                    <h3 class="panel-subtitle-small">Музеи</h3>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">01</span>
+                                            <a href="pages/museums/archaeology.html" class="panel-item-text">Музей археологии</a>
+                                            <a href="pages/museums/archaeology.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">02</span>
+                                            <a href="pages/museums/science-history.html" class="panel-item-text">Музей истории науки</a>
+                                            <a href="pages/museums/science-history.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">03</span>
+                                            <a href="pages/museums/nature.html" class="panel-item-text">Музей природы</a>
+                                            <a href="pages/museums/nature.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                    <div class="panel-item">
+                                        <div class="panel-item-content">
+                                            <span class="panel-item-number">04</span>
+                                            <a href="pages/museums/rare-books.html" class="panel-item-text">Музей редких книг</a>
+                                            <a href="pages/museums/rare-books.html" class="panel-item-arrow-top">→</a>
+                                        </div>
+                                        <div class="panel-item-line"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel" id="contactsPanel">
+        <div class="panel-content">
+            <div class="modal-navigation">
+                <div class="modal-nav-items">
+                    <span class="modal-nav-item nav-kazakhstan-btn">Республика Казахстан</span>
+                    <span class="modal-nav-item nav-institute-btn">Об институте</span>
+                    <span class="modal-nav-item nav-science-btn">Наука</span>
+                    <span class="modal-nav-item nav-procurement-btn">Гос закуп</span>
+                    <span class="modal-nav-item nav-news-btn">Новости</span>
+                    <span class="modal-nav-item nav-npa-btn">НПА</span>
+                    <span class="modal-nav-item nav-contacts-btn">Контакты</span>
+                </div>
+                <div class="modal-nav-buttons">
+                    <div class="modal-nav-btn btn-nauka nav-science-btn"></div>
+                    <div class="modal-nav-btn btn-zakup nav-procurement-btn"></div>
+                    <div class="modal-nav-btn btn-kontakt nav-contacts-btn"></div>
+                </div>
+            </div>
+            
+            <div class="panel-grid-container">
+                <div class="panel-grid">
+                    <div class="panel-left">
+                        <div class="panel-section">
+                            <h3 class="panel-subtitle-small">Контакты</h3>
+                            <div class="panel-item">
+                                <div class="panel-item-content">
+                                    <span class="panel-item-number">01</span>
+                                    <a href="pages/contacts.html" class="panel-item-text">Контактная информация</a>
+                                    <a href="pages/contacts.html" class="panel-item-arrow-top">→</a>
+                                </div>
+                                <div class="panel-item-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-nav-items">
+            <div class="mobile-nav-item nav-kazakhstan-btn">Республика Казахстан</div>
+            <div class="mobile-nav-item nav-institute-btn">Об институте</div>
+            <div class="mobile-nav-item nav-science-btn">Наука</div>
+            <div class="mobile-nav-item nav-procurement-btn">Гос закуп</div>
+            <div class="mobile-nav-item nav-news-btn">Новости</div>
+            <div class="mobile-nav-item nav-npa-btn">НПА</div>
+            <div class="mobile-nav-item nav-contacts-btn">Контакты</div>
+        </div>
+    </div>
+
     <section class="header-bottom-section">
         <div class="container-12col">
             <div class="section-divider"></div>
@@ -74,7 +601,7 @@
                     </p>
                 </div>
                 <div class="col-12 col-md-4 text-center text-md-end">
-                    <img src="images/Group 1000002743.svg" alt="Научная мысль" class="science-thought-image">
+                    <img src="/images/Group 1000002743.svg" alt="Научная мысль" class="science-thought-image">
                 </div>
             </div>
         </div>
@@ -139,41 +666,24 @@
         </div>
     </section>
 
-    <div class="mobile-overlay"></div>
-    <div class="mobile-menu">
-        <div class="mobile-nav-items">
-            <a href="index.html" class="mobile-nav-item nav-kazakhstan-btn">Республика Казахстан</a>
-            <a href="pages/institute/history.html" class="mobile-nav-item nav-institute-btn">Об институте</a>
-            <a href="pages/science/archive/about.html" class="mobile-nav-item nav-science-btn">Наука</a>
-            <a href="pages/procurement/goszakup.html" class="mobile-nav-item nav-procurement-btn">Гос закуп</a>
-            <a href="pages/news/all.html" class="mobile-nav-item nav-news-btn">Новости</a>
-            <a href="pages/npa/vacancies.html" class="mobile-nav-item nav-npa-btn">НПА</a>
-            <a href="pages/contacts.html" class="mobile-nav-item nav-contacts-btn">Контакты</a>
-        </div>
-    </div>
-
-
-    
-
-
    <footer class="footer">
     <div class="footer-content">
         <div class="footer-logo-section">
             <div class="footer-logo-container">
-                <img src="img/Group 1000002552.png" alt="GYLYM ORDASY" class="footer-logo-image">
+                <img src="/img/Group 1000002552.png" alt="GYLYM ORDASY" class="footer-logo-image">
             </div>
             <div class="footer-icons-horizontal">
                 <a href="#" class="footer-icon">
-                    <img src="img/Group 1000002466.png" alt="Иконка 1">
+                    <img src="/img/Group 1000002466.png" alt="Иконка 1">
                 </a>
                 <a href="#" class="footer-icon">
-                    <img src="img/Group 1000002465.png" alt="Иконка 2">
+                    <img src="/img/Group 1000002465.png" alt="Иконка 2">
                 </a>
                 <a href="#" class="footer-icon">
-                    <img src="img/Group 34364.png" alt="Иконка 3">
+                    <img src="/img/Group 34364.png" alt="Иконка 3">
                 </a>
                 <a href="#" class="footer-icon">
-                    <img src="img/Group 34363.png" alt="Иконка 4">
+                    <img src="/img/Group 34363.png" alt="Иконка 4">
                 </a>
             </div>
         </div>
@@ -294,6 +804,245 @@
         </div>
     </div>
 </footer>
-    <script src="script.js"></script>
+
+    <!-- JavaScript из страницы supervisor -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const panels = {
+        'sciencePanel': document.getElementById('sciencePanel'),
+        'kazakhstanPanel': document.getElementById('kazakhstanPanel'),
+        'procurementPanel': document.getElementById('procurementPanel'),
+        'institutePanel': document.getElementById('institutePanel'),
+        'newsPanel': document.getElementById('newsPanel'),
+        'npaPanel': document.getElementById('npaPanel'),
+        'contactsPanel': document.getElementById('contactsPanel')
+    };
+    
+    const overlay = document.getElementById('panelOverlay');
+    const navItems = document.querySelectorAll('.nav-item[class*="nav-"], .modal-nav-item[class*="nav-"]');
+    const navButtons = document.querySelectorAll('.nav-btn[class*="nav-"], .modal-nav-btn[class*="nav-"]');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+    
+    let activePanel = null;
+    let isTransitioning = false;
+
+    function openPanel(panelId) {
+        if (isTransitioning) return;
+        if (!panels[panelId]) return;
+        
+        isTransitioning = true;
+        
+        overlay.classList.add('active');
+        document.body.classList.add('panel-open');
+        document.body.style.overflow = 'hidden';
+        
+        if (activePanel && activePanel !== panelId) {
+            panels[activePanel].classList.remove('active');
+        }
+        
+        activePanel = panelId;
+        
+        setTimeout(() => {
+            panels[panelId].classList.add('active');
+            updateNavigation(panelId);
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        }, 50);
+    }
+
+    function closeAllPanels() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        Object.values(panels).forEach(panel => {
+            panel.classList.remove('active');
+        });
+        
+        setTimeout(() => {
+            overlay.classList.remove('active');
+            document.body.classList.remove('panel-open');
+            document.body.style.overflow = '';
+            
+            resetNavigation();
+            activePanel = null;
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        }, 300);
+    }
+
+    function updateNavigation(panelId) {
+        navItems.forEach(item => item.classList.remove('active'));
+        navButtons.forEach(btn => btn.classList.remove('active'));
+        
+        const panelType = panelId.replace('Panel', '');
+        const activeElements = document.querySelectorAll(`.nav-${panelType}, .nav-${panelType}-btn`);
+        
+        activeElements.forEach(el => {
+            if (el.classList.contains('modal-nav-item') || 
+                el.classList.contains('nav-item') || 
+                el.classList.contains('nav-btn') || 
+                el.classList.contains('modal-nav-btn')) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    function resetNavigation() {
+        navItems.forEach(item => item.classList.remove('active'));
+        navButtons.forEach(btn => btn.classList.remove('active'));
+    }
+
+    navItems.forEach(item => {
+        if (item.classList.contains('nav-contacts-btn')) {
+            item.style.opacity = '0.7';
+            item.style.cursor = 'default';
+            return;
+        }
+        
+        if (item.classList.contains('nav-kazakhstan-btn') || 
+            item.classList.contains('nav-institute-btn') || 
+            item.classList.contains('nav-science-btn') || 
+            item.classList.contains('nav-procurement-btn') || 
+            item.classList.contains('nav-news-btn') || 
+            item.classList.contains('nav-npa-btn')) {
+            
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const panelClass = Array.from(this.classList)
+                    .find(cls => cls.startsWith('nav-') && cls.endsWith('-btn'));
+                
+                if (!panelClass) return;
+                
+                const panelType = panelClass.replace('nav-', '').replace('-btn', '');
+                const panelId = panelType + 'Panel';
+                
+                if (activePanel === panelId) {
+                    closeAllPanels();
+                } else {
+                    openPanel(panelId);
+                }
+            });
+        }
+    });
+
+    navButtons.forEach(btn => {
+        if (btn.classList.contains('btn-kontakt')) {
+            btn.style.opacity = '0.7';
+            btn.style.cursor = 'default';
+            return;
+        }
+        
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const navClass = Array.from(this.classList).find(cls => cls.startsWith('nav-'));
+            if (!navClass) return;
+            
+            let panelType = navClass.includes('-btn') 
+                ? navClass.replace('nav-', '').replace('-btn', '')
+                : navClass.replace('nav-', '');
+            
+            const panelId = panelType + 'Panel';
+            
+            if (activePanel === panelId) {
+                closeAllPanels();
+            } else {
+                openPanel(panelId);
+            }
+        });
+    });
+
+    const burgerMenu = document.querySelector('.burger-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileOverlay = document.querySelector('.mobile-overlay');
+    
+    if (burgerMenu) {
+        burgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+    
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', function() {
+            burgerMenu.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            this.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    mobileNavItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const panelClass = Array.from(this.classList)
+                .find(cls => cls.startsWith('nav-') && cls.endsWith('-btn'));
+            
+            if (!panelClass) return;
+            
+            const panelType = panelClass.replace('nav-', '').replace('-btn', '');
+            const panelId = panelType + 'Panel';
+            
+            if (panels[panelId]) {
+                burgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                openPanel(panelId);
+            }
+        });
+    });
+
+    overlay.addEventListener('click', function(e) {
+        if (!isTransitioning) closeAllPanels();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && activePanel) {
+            closeAllPanels();
+        }
+    });
+
+    Object.values(panels).forEach(panel => {
+        panel.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+
+    document.querySelectorAll('.panel-item-content').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.classList.add('active');
+            const line = this.nextElementSibling;
+            if (line && line.classList.contains('panel-item-line')) {
+                line.classList.add('active');
+            }
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.classList.remove('active');
+            const line = this.nextElementSibling;
+            if (line && line.classList.contains('panel-item-line')) {
+                line.classList.remove('active');
+            }
+        });
+    });
+
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    }
+});
+    </script>
 </body>
 </html>
